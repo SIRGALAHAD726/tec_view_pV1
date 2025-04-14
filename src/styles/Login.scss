@@ -1,0 +1,175 @@
+$primary-color: #007bff;
+$secondary-color: #003366;
+$gradient-start: #1e3c72;
+$gradient-end: #2a5298;
+
+/* Login.scss */
+.login-container {
+  /* Fondo con degradado y la imagen */
+  background: linear-gradient(45deg, rgba(30, 60, 114, 0.7), rgba(42, 82, 152, 0.7)),
+              url('../fondo.webp') no-repeat center center/cover; /* Asegúrate de que la ruta de la imagen sea correcta */
+  height: 100vh; /* Asegúrate de que la altura sea suficiente */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Asegura que los rombos caigan sobre el fondo */
+  overflow: hidden; /* Evitar que los elementos caigan fuera del contenedor */
+}
+
+/* Caja de formulario de login */
+.login-box {
+  background: rgba(0, 0, 0, 0.7);  /* Fondo oscuro para asegurar legibilidad */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  border: 5px solid transparent;
+  background-clip: padding-box;
+  animation: borderRotation 3s linear infinite, glowing 2s ease-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @keyframes borderRotation {
+    0% {
+      border-color: red;
+    }
+    25% {
+      border-color: green;
+    }
+    50% {
+      border-color: blue;
+    }
+    75% {
+      border-color: yellow;
+    }
+    100% {
+      border-color: purple;
+    }
+  }
+
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 5px rgb(110, 107, 255), 0 0 10px rgb(61, 65, 255), 0 0 15px rgb(85, 57, 241);
+    }
+    50% {
+      box-shadow: 0 0 5px rgb(119, 107, 230), 0 0 10px rgb(128, 94, 252), 0 0 15px rgb(67, 79, 250);
+    }
+    100% {
+      box-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+    }
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+
+    label {
+      color: #fff;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      background: transparent;
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(45deg, $secondary-color, $primary-color);
+    }
+  }
+
+  button {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+@keyframes fallingSquares {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  50% {
+    transform: translateY(100vh) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+.falling-squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  .square {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: fallingSquares 5s infinite;
+    animation-timing-function: ease-in-out;
+    animation-delay: calc(5s * random());
+    transform-origin: center;
+    top: -50px; /* Start above the screen */
+  }
+
+  .square:nth-child(odd) {
+    background: rgba(74, 77, 255, 0.7);
+  }
+
+  .square:nth-child(even) {
+    background: rgba(141, 85, 247, 0.7);
+  }
+}

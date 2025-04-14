@@ -1,0 +1,211 @@
+/* Estilos del contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Asegura que ocupe todo el alto de la ventana */
+  background-image: url('./fondo.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Estilos del formulario */
+form {
+  background: rgba(0, 0, 128, 0.7);  /* Azul con opacidad ligera */
+  background: linear-gradient(45deg, rgba(0, 0, 128, 0.6), rgba(0, 0, 128, 0.9));  /* Fondo degradado con ligera transparencia */
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid black;  /* Borde negro */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 500px;  /* Limita el ancho máximo */
+  text-align: center;  /* Centrado del contenido */
+  color: rgb(255, 255, 255);  /* Texto blanco para el formulario */
+  backdrop-filter: blur(5px);  /* Da un efecto de desenfoque ligero al fondo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centrado de los elementos dentro del formulario */
+  margin: 50px 0;  /* Espaciado en la parte superior e inferior */
+}
+
+/* Estilos de los inputs */
+input {
+  width: 100%;  /* Asegura que el input ocupe todo el ancho disponible */
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco semi-transparente */
+  color: #333;  /* Texto oscuro para los inputs */
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del input */
+}
+
+/* Efecto al hacer foco en el input */
+input:focus {
+  border-color: #00796b;  /* Verde azulado al hacer foco */
+  outline: none;
+}
+
+/* Estilos del botón */
+button {
+  background-color: #00796b;  /* Azul verde */
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;  /* Hace que el botón ocupe todo el ancho disponible */
+}
+
+button:hover {
+  background-color: #004d40;  /* Azul verde más oscuro al pasar el ratón */
+}
+
+/* Estilos de los mensajes de éxito y error */
+.success-message {
+  background-color: #e0f7fa;  /* Azul claro */
+  color: #00796b;  /* Verde azulado oscuro */
+}
+
+.error-message {
+  background-color: #ffebee;  /* Rosa claro */
+  color: #d32f2f;  /* Rojo intenso */
+}
+
+.success-message, .error-message {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Títulos */
+h2 {
+  color: #ffffff;  /* Título blanco */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    width: 90%;
+  }
+
+  input, button {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* From Uiverse.io by jeremyssocial */ 
+/* Terminal Window */
+.terminal {
+  width: 500px;
+  background-color: #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Terminal Header */
+.terminal-header {
+  background-color: #333;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  margin-right: 15px;
+}
+
+.buttons span {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.close {
+  background-color: #ff605c;
+}
+.minimize {
+  background-color: #ffbd44;
+}
+.maximize {
+  background-color: #00ca4e;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: LEFT;
+}
+
+/* Terminal Body */
+.terminal-body {
+  padding: 10px;
+}
+
+.terminal-loader {
+  display: inline-flex;
+  align-items: center;
+}
+
+.loader-text {
+  margin-right: 5px;
+  
+}
+
+.dot {
+  opacity: 0;
+  animation: dotFadeInOut 1.5s infinite;
+}
+
+@keyframes dotFadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#dot1 {
+  animation-delay: 0.5s;
+}
+
+#dot2 {
+  animation-delay: 0.6s;
+}
+
+#dot3 {
+  animation-delay: 0.7s;
+}
+

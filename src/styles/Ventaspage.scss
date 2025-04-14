@@ -1,0 +1,700 @@
+
+
+
+
+.ventas-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.ventas-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo h1 {
+  font-size: 1.5rem;
+  color: #0f62fe;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-links a:hover {
+  color: #0f62fe;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0f62fe;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* User icon and dropdown */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.welcome-message {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.user-icon img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-icon:hover img {
+  transform: scale(1.1);
+}
+
+.account-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.account-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.account-menu li {
+  margin: 0.5rem 0;
+}
+
+.account-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.account-menu a:hover {
+  color: #5282da;
+}
+
+/* Cart icon */
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.cart-icon span {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: rgb(248, 3, 3);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Logout message */
+.logout-message {
+  text-align: center;
+  padding: 1rem;
+  color: #f34646;
+  font-weight: bold;
+  background-color: #f78585;
+  border: 1px solid #d8443f;
+  margin: 1rem 2rem;
+  border-radius: 10px;
+}
+
+/* Main page structure */
+.ventas-page .main-wrapper {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+aside.filters {
+  width: 250px;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside.filters h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+  /* Main content */
+  main.main-content {
+    flex: 20 ;
+  }
+
+  .section {
+    width: 96%;
+    height: 100%;
+    --s: 200px; /* Controla el tamaño */
+    --c1: #e4e5f8;
+    --c2: #6c96eb;
+    --c3: #8583ec;
+    
+    /* Fondo con gradiente de color y efecto de circuito */
+    background: linear-gradient(135deg, #91a4f8, #b9f0d9), /* Degradado */
+                repeating-conic-gradient(
+                  from 30deg,
+                  #c7bdff00 0 120deg,
+                  var(--c3) 0 180deg
+                )
+                calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+                repeating-conic-gradient(
+                  from 30deg,
+                  var(--c1) 0 60deg,
+                  var(--c2) 0 120deg,
+                  var(--c3) 0 180deg
+                );
+  
+    background-size: var(--s) calc(var(--s) * 0.577);
+    background-blend-mode: multiply;
+  
+    /* Efecto de circuito con SVG */
+    background-image: url('../fondo.jpg'); /* URL del patrón SVG */
+    background-position: center;
+    background-size: cover;
+  
+    /* Añadir un borde negro y redondeado */
+    border: 4px solid #333;
+    border-radius: 15px; /* Bordes redondeados */
+    
+    /* Añadir un espaciado interno */
+    padding: 46px; /* Espaciado de los bordes internos */
+    
+    /* Evitar que el contenido se desborde */
+    overflow: hidden; /* Los productos no escaparán del cuadro */
+  }
+
+//efecto de los titulos ventas page 
+
+
+
+/* From Uiverse.io by jeremyssocial */ 
+/* Terminal Window */
+.terminal {
+  width: 500px;
+  background-color: #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin: 15px;
+}
+
+/* Terminal Header */
+.terminal-header {
+  background-color: #333;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  margin-right: 15px;
+}
+
+.buttons span {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.close {
+  background-color: #ff605c;
+}
+.minimize {
+  background-color: #ffbd44;
+}
+.maximize {
+  background-color: #00ca4e;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Terminal Body */
+.terminal-body {
+  padding: 10px;
+  margin: 10px;
+}
+
+.terminal-loader {
+  display: inline-flex;
+  align-items: center;
+}
+
+.loader-text {
+  margin-right: 10px;
+ 
+}
+
+.dot {
+  opacity: 0;
+  animation: dotFadeInOut 1.5s infinite;
+}
+
+@keyframes dotFadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#dot1 {
+  animation-delay: 0.5s;
+}
+
+#dot2 {
+  animation-delay: 0.6s;
+}
+
+#dot3 {
+  animation-delay: 0.7s;
+}
+
+
+
+
+
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2.5rem 1.5rem;
+  justify-items: center;
+}
+
+/* Product card */
+.product-card, .card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 0.5rem;
+}
+
+.product-card:hover, .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card flip effect */
+.card {
+  perspective: 1000px;
+  width: 240px;
+  height: 340px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.front {
+  background: #fff;
+}
+
+.back {
+  background: #5e7fda;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Product image styling */
+.img {
+  position: relative;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #808aeb;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+}
+
+#right {
+  right: -20px;
+  top: 20px;
+}
+
+#bottom {
+  bottom: -20px;
+  left: 30px;
+}
+
+.product-image {
+  position: relative;
+  width: 100px;
+  height: auto;
+  z-index: 2;
+}
+
+/* Product card text content */
+.front-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.badge {
+  background-color: #ffffff;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.description .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.description p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.product-card span {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: #0f62fe;
+}
+
+/* Product buttons */
+.product-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0f62fe;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product-buttons button:hover {
+  background: #0043ce;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .ventas-page .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    padding: 0.4rem 0;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ventas-page .main-wrapper {
+    flex-direction: column;
+  }
+
+  aside.filters {
+    width: 100%;
+  }
+}
+
+
+
+//BOTON FILTRAR 
+
+
+/* From Uiverse.io by adeladel522 */ 
+.button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+
+
+//boton de agregar carrito 
+
+/* From Uiverse.io by kamehame-ha - Adaptado */
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.text:hover {
+  background-color: transparent;
+  color: #181717;
+}
+
+.text:hover svg path {
+  fill: #181717;
+}
+
+.text svg path {
+  transition: 400ms;
+}
+
+
+//mas infomracion
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Btn::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: .3s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transition-duration: .3s;
+  transform: translate(100%,-50%);
+  border-radius: 0;
+}
+
+.Btn:active {
+  transform: translate(5px,5px);
+  transition-duration: .3s;
+}

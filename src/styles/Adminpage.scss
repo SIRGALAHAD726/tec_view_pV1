@@ -1,0 +1,196 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #1f2d3d;
+  color: white;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+  }
+
+  li {
+    padding: 10px 15px; /* Reducido el padding para los botones */
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #3a4d63;
+    }
+
+    &.active {
+      background-color: #007bff;
+    }
+  }
+
+  .logout-button {
+    margin-top: auto;
+    padding: 8px 12px; /* Reducido el padding del botón de logout */
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px; /* Ajusté el tamaño del texto */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: #d9363e;
+    }
+
+    &:active {
+      background-color: #b02a2f;
+      transform: scale(0.98);
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f5f6f9;
+
+  .header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .admin-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #333;
+    }
+
+
+    //boton eliminar 
+    button.eliminar {
+      padding: 6px 12px; /* Reducir el padding */
+      font-size: 0.9rem;  /* Ajustar el tamaño del texto */
+      background-color: #dc3545; 
+      color: white; 
+      border: none;
+      border-radius: 6px; 
+      cursor: pointer;
+      max-width: 200px; /* Limitar el ancho máximo */
+      width: auto; /* Dejar que el botón se ajuste al contenido */
+      margin:  left; /* Centrar el botón */
+      transition: background-color 0.3s ease;
+    
+      &:hover {
+        background-color: #c82333; /* Efecto hover */
+      }
+    
+      &:focus {
+        outline: none; /* Eliminar outline en foco */
+      }
+    }
+
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+
+      input, textarea, select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button {
+        grid-column: span 1; /* Cambié a una sola columna */
+        padding: 0.6rem 1.2rem; /* Reducido el padding */
+        max-width: 220px; /* Limité el ancho máximo */
+        margin: 0 auto; /* Centré el botón */
+        background-color: #28a745;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+
+    ul {
+      margin-top: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      border-left: 5px solid #007BFF;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        margin-left: 10px;
+        padding: 6px 10px; /* Reducido el padding */
+        font-size: 0.9rem; /* Ajusté el tamaño del texto */
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:first-of-type {
+          background-color: #ffc107;
+          color: #333;
+
+          &:hover {
+            background-color: #e0a800;
+          }
+        }
+
+        &:last-of-type {
+          background-color: #dc3545;
+          color: white;
+
+          &:hover {
+            background-color: #c82333;
+          }
+        }
+      }
+    }
+  }
+}

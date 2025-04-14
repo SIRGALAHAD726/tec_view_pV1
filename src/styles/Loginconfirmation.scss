@@ -1,0 +1,84 @@
+$primary-color: #1e88e5;
+$hover-color: #1565c0;
+$background-gradient: linear-gradient(to bottom right, #bbdefb, #e3f2fd);
+$input-border: #ccc;
+$input-focus: $primary-color;
+$shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-confirm-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+
+  background-image: 
+    $background-gradient,
+    url('../fondo.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+
+  .login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: $shadow;
+    width: 100%;
+    max-width: 400px;
+    text-align: center; // Centramos todos los elementos
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.8rem 1rem;
+      margin: 0.6rem 0;
+      border: 1px solid $input-border;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border 0.2s;
+      display: block;
+
+      &:focus {
+        outline: none;
+        border-color: $input-focus;
+      }
+    }
+
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+
+    .error-text {
+      color: red;
+      margin-top: 0.5rem;
+    }
+  }
+}
